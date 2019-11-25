@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Da Baby</title>
+</head>
+
+<body background="DaBaby.jpg">
+<audio id="changeMusic" >
+	
+<source src="audio/Suge.mp3" type="">
+
+</audio>
+
+<img id="changeImage" src="images/mail1.gif" style="display: block; width: 1000px; height: 500px;">
+
+	
+</div>
+
+<button onclick="playMusic()">Play Song</button>
+
+<button onclick="pauseMusic()" >Pause Song</button>
+
+<button onclick="stopMusic()">Stop Song</button>
+
+<script type="text/javascript">
+	
+var a = document.getElementById("changeMusic");
+var b = document.getElementById("changeImage");
+var checkThis;
+var prevTime = 0;
+var i = 0;
+
+function playMusic () {
+
+a.play();
+
+checkThis = setInterval(checkTime, 1000);
+
+
+}
+
+function pauseMusic () {
+
+a.pause();
+
+}
+
+function stopMusic () {
+
+a.currentTime = 0;
+a.pause();
+
+
+}
+
+
+function checkTime() {
+
+	console.log(a.currentTime);
+	console.log(i);
+
+if (a.currentTime - prevTime >= 5) {
+
+	i = i + 1;
+	prevTime = a.currentTime;
+
+	b.src = "images/"+ i + ".gif";
+
+	if (i > 8) {
+
+		i = 1;
+	}
+
+}
+}
+
+
+
+
+
+</script>
+
+
+	
+</body>
